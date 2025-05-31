@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+.topbar {
+  background-color: #cc3333;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: white;
+}
+
+.logo {
+  background-color: aqua;
+  color: black;
+  font-weight: bold;
+  padding: 3px 5px;
+  margin-right: 10px;
+}
+
+.toggle-menu {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.theme-switch input {
+  transform: scale(1.2);
+  margin-right: 20px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.icons span,
+.login-btn {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.login-btn {
+  background-color: #2b38a1;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+.sidebar {
+  background-color: #6c80ff;
+  color: white;
+  width: 220px;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.side-label {
+  font-style: italic;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main {
+  flex: 1;
+  background-color: white;
+  padding: 0;
+}
+
+.banner {
+  background: #e5e5e5;
+  text-align: center;
+  font-size: 24px;
+  font-style: italic;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 30px;
+  font-size: 18px;
+}
