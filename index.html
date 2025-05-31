@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hybrid App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: cursive;
+    }
+    .header {
+      background: #d3362e;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .sidebar {
+      background: #6a74fa;
+      color: black;
+      padding: 20px;
+      width: 230px;
+      height: 100vh;
+      box-sizing: border-box;
+      position: fixed;
+    }
+    .main {
+      margin-left: 230px;
+      padding: 20px;
+    }
+    .banner {
+      background: #e2e2e2;
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div><strong>ANM CONSULTANCY</strong></div>
+    <div><strong>HEADER</strong></div>
+    <div>
+      <button>Log in</button>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <a href="#" onclick="loadPage('main', 'MAIN PAGE')">Main Page</a>
+    <a href="#" onclick="loadPage('hashtag-manager', 'HASHTAG MANAGER')">Hashtag Manager</a>
+    <a href="#" onclick="loadPage('text-manager', 'TEXT MANAGER')">Text Manager</a>
+    <a href="#" onclick="loadPage('socials-manager', 'SOCIALS MANAGER')">Socials Manager</a>
+    <a href="#" onclick="loadPage('member-area', 'MEMBER AREA')">Member Area</a>
+    <a href="#" onclick="loadPage('authentication', 'AUTHENTICATION')">Authentication</a>
+  </div>
+
+  <div class="main">
+    <div class="banner" id="banner-title">MAIN PAGE</div>
+    <div id="content-area">
+      <h2>Welcome to the Main Page</h2>
+      <p>This is the main section.</p>
+    </div>
+  </div>
+
+  <script>
+    function loadPage(page, title) {
+      fetch(`http://localhost:5000/page/${page}`)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('content-area').innerHTML = html;
+          document.getElementById('banner-title').textContent = title;
+        });
+    }
+  </script>
+</body>
+</html>
